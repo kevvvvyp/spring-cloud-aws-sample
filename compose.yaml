@@ -1,0 +1,21 @@
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+  localstack:
+    image: localstack/localstack
+
+    # Note we don't actually need redis here but the `depends` is a little workaround for the lack
+    # of localstack support on the new compose functionality. We could have probably used any image.
+    depends_on:
+      - redis
+    ports:
+      - "4566-4599:4566-4599"
+    environment:
+      - SERVICES=dynamodb,s3,sqs
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./init-localstack.sh:/etc/localstack/init/ready.d/init-localstack.sh

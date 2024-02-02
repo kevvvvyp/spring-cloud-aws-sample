@@ -1,0 +1,25 @@
+logging:
+  level:
+    io.github.kevvvvyp: INFO
+
+spring:
+  cloud:
+    aws:
+      sqs:
+        enabled: true
+        region: us-east-1
+        endpoint: http://localhost:4566
+      sns:
+        enabled: true
+        region: us-east-1
+        endpoint: http://localhost:4566
+      credentials:
+        access-key: none
+        secret-key: none
+  docker:
+    compose:
+      readiness:
+        # Required for Localstack as it's technically not yet supported by Spring's docker support
+        # Please see: https://spring.io/blog/2023/06/21/docker-compose-support-in-spring-boot-3-1
+        wait: never
+
