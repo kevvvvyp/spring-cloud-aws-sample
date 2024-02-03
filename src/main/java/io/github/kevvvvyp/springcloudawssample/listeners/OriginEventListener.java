@@ -33,7 +33,7 @@ public class OriginEventListener {
 		final OriginEvent originEvent = deserialiseMessageField( snsMessage );
 
 		// Perform some transformation
-		final TxEvent txEvent = new TxEvent( originEvent.text() );
+		final TxEvent txEvent = new TxEvent( originEvent.colour() );
 
 		// Publish
 		log.info( "Publishing TxEvent: {}", txEvent );

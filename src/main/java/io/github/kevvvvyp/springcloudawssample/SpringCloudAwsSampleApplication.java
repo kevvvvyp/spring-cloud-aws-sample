@@ -25,7 +25,7 @@ public class SpringCloudAwsSampleApplication {
 		final ConfigurableApplicationContext ctx = SpringApplication.run(
 				SpringCloudAwsSampleApplication.class, args );
 
-		final OriginEvent originEvent = new OriginEvent( "Green" );
+		final OriginEvent originEvent = new OriginEvent( "GREEN" );
 
 		final SnsTemplate template = ctx.getBean( SnsTemplate.class );
 

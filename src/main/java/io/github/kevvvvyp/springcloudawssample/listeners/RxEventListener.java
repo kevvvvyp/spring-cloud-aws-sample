@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class RxEventListener {
 
-	// This doesn't work, but should we ought to just map JSON?
+	// This works now!
 	@SqsListener(value = "my-fifo.fifo")
 	public void receiveEvent( @Valid @NonNull final RxEvent rxEvent ) {
 		log.info( "Success! Received: {}", rxEvent );
