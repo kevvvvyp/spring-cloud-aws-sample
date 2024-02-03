@@ -23,7 +23,7 @@ public class RxEventListener {
 
 	// This works fine (assuming fifo has been drained of previous messages (kill docker container))
 	//	@SqsListener(value = "my-fifo.fifo")
-	//	public void receiveEvent( @Valid @NonNull final TxEvent rxEvent ) {
-	//		log.info( "Success! Received: {}", rxEvent );
+	//	public void receiveEvent( @Valid @NonNull final TxEvent txEvent ) {
+	//		log.info( "Success! Received: {}", txEvent );
 	//	}
 }
