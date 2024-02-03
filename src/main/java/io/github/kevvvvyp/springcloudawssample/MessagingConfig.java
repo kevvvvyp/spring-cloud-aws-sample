@@ -44,7 +44,7 @@ public class MessagingConfig {
 		SqsMessagingMessageConverter messageConverter = new SqsMessagingMessageConverter();
 
 		// Configure Type Header
-		messageConverter.setPayloadTypeHeader( "myTypeHeader" );
+		messageConverter.setPayloadTypeHeader( "payload-type-header" );
 
 		// Configure Header Mapper
 		SqsHeaderMapper headerMapper = new SqsHeaderMapper();
